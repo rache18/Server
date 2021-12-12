@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment8</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/assignment8.css') }}">
+</head>
+<body>
+{% include 'Header.html' %}
+
+
+
+{% extends "message.html"%}
+          {%  block message %}
+              {{ super() }}
+            <p id="p">Things I like to cook</p>
+            {%for prod in bakeryProducts %}
+                {% if prod == "cooKies" %}
+                    <li >{{prod | lower() }}</li>
+                {% elif prod == "english cake" %}
+                    <li >{{prod | replace("english","English") }}</li>
+                {% else %}
+                    <li >{{prod}}</li>
+                {% endif %}
+            {%endfor%}
+          {% endblock %}
+
+
+</body>
+</html>
+
+
+

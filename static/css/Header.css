@@ -1,0 +1,23 @@
+
+  header {
+    text-align:center;
+    /*animation-name: example;*/
+    /*animation-duration: 4s;*/
+    /*grid-area: header;*/
+    background: #ece7e3;
+    padding: 15px;
+    font-size: 24px;
+    font-family: cursive;
+    color: #d6b334;
+  }
+
+
+a:link, a:visited {
+  color: #d6b334;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+

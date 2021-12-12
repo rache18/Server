@@ -1,0 +1,105 @@
+  *{
+      box-sizing: border-box;
+  }
+
+  @keyframes example {
+    from {background-color:#946e48 ;}
+    to {background-color: #dac7b4;}
+    }
+
+  @keyframes example2 {
+    from {background-color:#e66a6a ;}
+    to {background-color: #aa3636;}
+    }
+
+  .wrapper{
+      content: "";
+      clear: both;
+      display: grid;
+      width: 100%;
+      height: 100vh;
+      grid-template-areas:
+      "name name"
+      "contact education"
+      "skills Army"
+      "language form"
+      "language form"
+      "language form";
+      grid-template-columns: 50% 50%;
+  }
+
+  /*.header {*/
+  /*  animation-name: example;*/
+  /*  animation-duration: 4s;*/
+  /*  grid-area: header;*/
+  /*  background: #b9936c;*/
+  /*  padding: 15px;*/
+  /*  font-size: 18px;*/
+  /*  font-family:Verdana, Geneva, Tahoma, sans-serif*/
+  /*}*/
+
+  .name{
+    font-size: 18px;
+    grid-area: name;
+    animation-name: example;
+    animation-duration: 4s;
+    font-family: cursive;
+    padding: 15px;
+    background: #dac7b4;
+  }
+
+  [class*="box-"]{
+      float: left;
+      padding: 15px;
+      font-family: cursive; 
+  }
+
+  .box-one {
+    grid-area: contact;
+    background: #dac292; 
+  }
+
+  .box-two {
+    grid-area: education;
+    background: #e6e2d3;
+  }
+
+  .box-three {
+    grid-area: skills;
+    background: #c4b7a6;
+  }
+
+  .box-four {
+    grid-area: Army;
+    background: #dac292; 
+  }
+  
+  .box-five {
+    grid-area: language;
+    background: #b9936c;
+    height: 70vh;
+  }
+  
+  .box-six{
+    grid-area: form;
+    background: #d6b334; 
+    height: 70vh;
+    text-align: left;
+  }
+  
+  @media only screen and (max-width: 768px){
+      /* for mobile */
+    [class*="box-"]{
+        width: 100%;
+        background: #eea29a;
+    }
+    .header{
+      animation-name: example2;
+      animation-duration: 4s;
+        width: 100%;
+        background: #c94c4c; 
+    }
+
+
+}
+ 

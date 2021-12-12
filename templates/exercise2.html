@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Racheli Eliyahu</title>
+</head>
+
+<body>
+{% include 'Header.html' %}
+<h1 style="text-align:center;color:red;">
+    Hello! this is my first site :)
+</h1>
+<p style="text-align:center;">
+  I'm taking WEB curse to build myself a website. I love to cook !!!
+    <br>
+    this is a picture of a cake:
+</p>
+    <p style="text-align:center;">
+    <img src="{{ url_for('static', filename='../static/img/cake.jpg') }}" alt="Cake">
+    </p>
+</body>
+</html>

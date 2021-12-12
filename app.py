@@ -1,23 +1,30 @@
-from flask import Flask, redirect, url_for
+from flask import Flask, redirect, url_for ,render_template
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def main():
-    return 'This is Web Course!'
+    return render_template('CVgrid.html')
 
-@app.route('/about')
+@app.route('/Ex2')
 def about1():
-    return 'My name is Racheli, I am 26 years old'
+    return render_template('exercise2.html')
 
-@app.route('/info')
+@app.route('/Form')
 def info():
- return redirect('/about')
+    return render_template('forms.html')
 
-@app.route('/payment')
-def errorpage():
- return redirect(url_for('main'))
+@app.route('/assignment8')
+def assignment8():
+    bakeryProducts =("cooKies", "bread", "english cake")
+    return render_template('assignment8.html',bakeryProducts = bakeryProducts)
+
+
+
+# @app.route('/payment')
+# def errorpage():
+#  return redirect(url_for('main'))
 
 if __name__ == '__main__':
     app.run()

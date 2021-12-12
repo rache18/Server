@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/CVgrid.css') }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello using media</title>
+    <script src="{{ url_for('static', filename='../static/js/jsEx4.js') }}"></script>
+</head>
+
+<body>
+    {% include 'Header.html' %}
+    <div class="wrapper">
+        <div style="text-align:center;" class="name" >My name is
+            <button type="button" onclick="func1()">click here to get my name</button>
+            I am Industrial engineering and management student in BGU, looking for my next challenge!
+        </div>
+        <div style="text-align:center;" class="box-one">Email
+            Contact Information<br>
+            rachelosh184@gmail.com<br>
+            Address
+            Rothschild 32, Ness Ziona, Israel <br>
+            Phone
+            +972 (54) 492-9895</div>
+        <div style="text-align:center;" class="box-two">Industrial engineering and management
+            Ben Gurion University<br>
+            • Current grade point average: 81<br>
+            Full Matriculation<br>
+            Ben Gurion high school GPA 107.4<br>
+        </div>
+            
+        <div style="text-align:center;" class="box-three">Skills
+            Html, CSS, JS,
+            Microsoft Office,
+            JAVA,
+            Python,
+            SQL, Mysql</div>
+        <div style="text-align:center;" class="box-four">CIC worker & Head Office
+            IDF
+            • Full military service.</div>
+        <div style="text-align:center;" class="box-five">language: Hebrew , English , Spanish</div>
+        <div class="box-six">
+            <form>
+                <label for="fname">First Name</label>
+                <input type="text" id="id1" minlength="4" name="firstname" placeholder="Your name.."><br>
+
+                <label for="fname">Last Name</label>
+                <input type="text" id="id2" minlength="4" name="lasttname" placeholder="Last name.."><br>
+
+                <label for="subject">Subject</label> <br>
+                <textarea id="id3" name="subject" required minlength="20" placeholder="Write something.." style="height:150px"></textarea><br>
+                
+                
+                <p id="demo"></p>
+
+                <button type="button" onclick="Namevalidation()">Submit</button>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>

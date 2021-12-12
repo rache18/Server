@@ -1,0 +1,29 @@
+body {
+    background-color: pink;
+}
+
+h2 {
+    text-align: center;
+    color: rgb(0, 132, 255);
+    font-family: "Lucida Console", "Courier New", monospace;
+    }
+#fname {
+        text-align: center;
+        color: red;
+        }
+        
+.nice {
+    text-align: center;
+    color: rgb(255, 0, 179);
+}
+input {
+    padding: 10px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius:10px;
+    }
+    label:after { content: " " }
+h3 {
+    text-align: center;
+    color: rgb(3, 48, 90);
+    font-family: "Lucida Console", "Courier New", monospace;
+}

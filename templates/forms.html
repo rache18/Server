@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/style.css') }}">
+</head>
+<body>
+{% include 'Header.html' %}
+<h2>Welcome to my website, sign up here:</h2>
+<form class="nice">
+    <input type="text" id="fname" name="fname" placeholder="First name"><br><br>
+    <input type="text" id="lname" name="lname" placeholder="Last name"><br><br>
+    <input type="email" id="email" name="email" placeholder="Email"><br><br>
+    <input type="password" id="password" name="lname" placeholder="Password"><br><br>
+    <input type="submit" value="Submit">
+</form>
+<br>
+<h3>Somthing is wrong? let me know below:</h3>
+<form class="nice" >
+    <input type="text" class="input" id="fnames" name="fnames" placeholder="First Name"><br><br>
+    <input type="text" id="note" name="fname" placeholder="Comment a note"><br><br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
