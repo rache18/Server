@@ -1,5 +1,7 @@
 
-  header {
+
+
+header {
     text-align:center;
     /*animation-name: example;*/
     /*animation-duration: 4s;*/
@@ -9,6 +11,7 @@
     font-size: 24px;
     font-family: cursive;
     color: #d6b334;
+    grid-template-columns: 50% 50%;
   }
 
 

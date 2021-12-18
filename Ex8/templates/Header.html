@@ -2,13 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Header</title>
      <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/Header.css') }}">
 </head>
 
 <body>
     <header>
-        <a href="/">CV</a> | <a href="/Ex2">About</a> | <a href="Form">Form</a> | <a href='/assignment8'>Assignment8</a>
+        <a href="/">CV</a> | <a href="/Ex2">About</a> | <a href="Form">Form</a> | <a href='/assignment8'>Assignment8 </a> | <a href='/assignment9'>Assignment9</a>
+        {% if session['login'] %}
+        <h3> Welcome {{ session['userName'] }}!</h3>
+        <form name="logout" action="logout" >
+            <input type="submit" value="Logout">
+        </form>
+        {% endif %}
     </header>
 
 </body>
