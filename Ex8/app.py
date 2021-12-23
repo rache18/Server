@@ -1,5 +1,4 @@
 from flask import Flask, render_template, url_for , request , redirect , session ,blueprints ,jsonify
-import  mysql, mysql.connector
 
 app = Flask(__name__)
 app.secret_key = '1234'
@@ -67,3 +66,5 @@ def logout():
 
 if __name__ == '__main__':
     app.run()
+
+

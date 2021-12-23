@@ -31,7 +31,9 @@
 {% endif %}
 
 
-{%if session['login'] == False%}
+{%if session['login'] == True%}
+    You can not register :(
+{% else %}
     <hr>
     <h1>Register Form:</h1>
     <form name="register" method="POST" action="assignment9">
@@ -48,5 +50,3 @@
 
 </body>
 </html>
-
-
