@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment10</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/style.css') }}">
+
+</head>
+<body>
+    {% include 'Header.html' %}
+
+    <h1 style="align-items: center">{{ messages }}</h1>
+
+    <h3>Insert User here:</h3>
+    <form name="insert" method="POST" action="/insert">
+        <input name="UserName" type="text" placeholder="Your User Name">
+        <input name="FirstName" type="text" placeholder="Your First Name">
+        <input name="LastName" type="text" placeholder="Your Last Name">
+        <input name="Email" type="email" placeholder="Your Email">
+        <input type="submit" placeholder="Insert">
+    </form>
+
+    <h3>Update User info here:</h3>
+    <form name="update" method="POST" action="/update">
+        <input name="UserName" type="text" placeholder="Your User Name">
+        <input name="FirstName" type="text" placeholder="Your First Name">
+        <input name="LastName" type="text" placeholder="Your Last Name">
+        <input name="Email" type="email" placeholder="Your Email">
+        <input type="submit" placeholder="Update">
+    </form>
+
+    <h3>Delete:</h3>
+    <form name="delete" method="POST" action="/delete">
+        <input name="Email" type="text" placeholder="Email of user you want to delete">
+        <input type="submit" placeholder="Delete">
+    </form>
+
+
+    <h2>Users list:</h2>
+    <ol>
+        {% for user in users %}
+            <li>
+                <b>User Name:</b>{{ user.UserName }} <br>
+                <b>First Name:</b> {{ user.FirstName }} <br>
+                <b>Last Name:</b> {{ user.LastName }} <br>
+                <b>Email:</b> {{ user.Email }}
+            </li>
+            <br>
+        {% endfor %}
+    </ol>
+
+</body>
+</html>

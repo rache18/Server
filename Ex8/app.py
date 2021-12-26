@@ -1,13 +1,17 @@
 from flask import Flask, render_template, url_for , request , redirect , session ,blueprints ,jsonify
+import  mysql, mysql.connector
 
 app = Flask(__name__)
 app.secret_key = '1234'
 
+from assignment10.assignment10 import assignment10
+app.register_blueprint(assignment10)
+
 users = {"user1": {"First Name": "Racheli","Last Name": "Eliyahu", "Email": "rachelosh184@gmail.com", "User Name": "Rache"},
-         "user2": {"First Name": "Doda", "Last Name": "Simi", "Email": "DodaSimi2010@gmai.com" , "User Name": "coolDoda"},
-         "user3": {"First Name": "Kim", "Last Name": "Kardeshian", "Email": "kimik@gmai.com", "User Name": "kimi"},
-         "user4": {"First Name": "billie", "Last Name": "Eilish", "Email": "billiesh@gmai.com","User Name": "billiesh"},
-         "user5": {"First Name": "Leo", "Last Name": "Messi", "Email": "leo@gmai.com","User Name": "messiTheKing"}
+         "user2": {"First Name": "Doda", "Last Name": "Simi", "Email": "DodaSimi2010@gmail.com" , "User Name": "coolDoda"},
+         "user3": {"First Name": "Kim", "Last Name": "Kardeshian", "Email": "kimik@gmail.com", "User Name": "kimi"},
+         "user4": {"First Name": "billie", "Last Name": "Eilish", "Email": "billiesh@gmail.com","User Name": "billiesh"},
+         "user5": {"First Name": "Leo", "Last Name": "Messi", "Email": "leo@gmail.com","User Name": "messiTheKing"}
          }
 
 
@@ -65,6 +69,6 @@ def logout():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
 
 
