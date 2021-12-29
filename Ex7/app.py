@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def main():
     return 'Hey Arseni, this ex7 is uploaded in 12.13.2021,' \
-           ' but - we spoke on email, I deleted original Ex7 and upload Ex8 on it by mistake ' \
+           ' but - we spoke on email, I deleted original Ex7 and upload Ex8+Ex9 on it by mistake ' \
            'hope you understand, thank you! '
 
 @app.route('/about')
