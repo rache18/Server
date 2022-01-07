@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment11OuterSource</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/style.css') }}">
+</head>
+<body>
+    {% include 'Header.html' %}
+
+    <h2> Backend form: </h2>
+    <form name="backend" id="backend" action="/assignment11/outer_source">
+        <input type="number" name="number">
+        <input type="submit" value="Get user">
+    </form>
+
+
+    {% if user %}
+    <h4>user id: {{ user.data.id }} </h4>
+    <h4>user email: {{ user.data.email }} </h4>
+    <h4>user first name: {{ user.data.first_name }} </h4>
+    <h4>user last name: {{ user.data.last_name }} </h4>
+    <img src="{{ user.data.avatar }}" alt="pic"> <br>
+    <h4> Support </h4>
+    <h4>url: {{ user.support.url }} </h4>
+    <h4>text: {{ user.support.text }} </h4>
+    {% endif %}
+
+    <hr>
+
+    <h2> Frontend form: </h2>
+
+        <input type="number" id="number" name="number">
+        <button onclick="getUsers()">Get frontend </button>
+{#        <input type="submit" value="Get frontend">#}
+
+
+    <main>
+
+    </main>
+
+    <script src="../static/js/FetchFormEx11.js" ></script>
+
+
+</body>
+</html>

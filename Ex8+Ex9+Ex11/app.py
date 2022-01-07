@@ -1,9 +1,32 @@
 from flask import Flask, render_template, url_for , request , redirect , session ,blueprints ,jsonify
 import  mysql, mysql.connector
 import os, sys
+from flask import jsonify
+import requests
+import random
 
 app = Flask(__name__)
 app.secret_key = '1234'
+def interact_db(query, query_type: str):
+    return_value = False
+    connection = mysql.connector.connect(host='localhost',
+                                         user='root',
+                                         password='root',
+                                         database='web')
+    cursor = connection.cursor(named_tuple=True)
+    cursor.execute(query)
+
+    if query_type == 'commit':
+        connection.commit()
+        return_value = True
+    if query_type == 'fetch':
+        query_result = cursor.fetchall()
+        return_value = query_result
+
+    connection.close()
+    cursor.close()
+    return return_value
+
 
 from assignment10.assignment10 import assignment10
 app.register_blueprint(assignment10)
@@ -66,6 +89,45 @@ def assignment9():
 def logout():
     session['login'] = False
     return render_template('assignment9.html')
+
+#  assignment 11
+
+def get_users():
+    usersTable = interact_db(query="select * from web.users", query_type='fetch')
+    return_dict = {}
+    for user in usersTable:
+        return_dict[f'user_{user.UserName}'] = {
+            'First Name': user.FirstName,
+            'User Name': user.UserName,
+            'Last Name': user.LastName,
+            'Email': user.Email,
+        }
+    return jsonify(return_dict)
+
+@app.route('/assignment11/users' , methods = ['GET','DELETE','POST','PUY'])
+def users():
+    usersJson = get_users()
+    return usersJson
+
+
+
+def get_user(num):
+    res = requests.get(f'https://reqres.in/api/users/{num}')
+    res = res.json()
+    return res
+
+
+@app.route('/assignment11/outer_source', methods=['GET','DELETE','POST','PUY'])
+def req_backend_func():
+    num = 1
+    if "number" in request.args:
+        num = int(request.args['number'])
+        user = get_user(num)
+        return render_template('Assignment11Forms.html', user=user)
+    else:
+        return render_template('Assignment11Forms.html')
+
+
 
 
 

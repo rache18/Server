@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ProjectPlainTextFileTypeManager">
-    <file url="file://$PROJECT_DIR$/Ex8+Ex9/app.py" />
+    <file url="file://$PROJECT_DIR$/Ex8+Ex9+Ex11/app.py" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10 (Server)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10" project-jdk-type="Python SDK" />
   <component name="PyCharmProfessionalAdvertiser">
     <option name="shown" value="true" />
   </component>
