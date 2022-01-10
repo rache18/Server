@@ -128,8 +128,28 @@ def req_backend_func():
         return render_template('Assignment11Forms.html')
 
 
-
-
+@app.route('/assignment12/restapi_users', defaults={'user_id': -1})
+@app.route('/assignment12/restapi_users/<int:user_id>')
+def get_user_func(user_id):
+    if user_id == -1:
+       user_id = 1
+    return_dict = {}
+    print(user_id)
+    query = "select * from users WHERE id='%s';" % user_id
+    user = interact_db(query=query, query_type='fetch')
+    if len(user) == 0:
+        return_dict = {
+            'status': 'failed',
+            'message': 'user not found'
+        }
+    else:
+        return_dict[f'user_{user[0].id}'] = {
+            'First Name': user[0].FirstName,
+            'User Name': user[0].UserName,
+            'Last Name': user[0].LastName,
+            'Email': user[0].Email,
+        }
+    return jsonify(return_dict)
 
 if __name__ == '__main__':
     app.run(debug=True)
